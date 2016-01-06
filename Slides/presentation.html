@@ -1,0 +1,924 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>WebGL - Du Savoir Faire au Faire Savoir </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=792, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+    <link rel="stylesheet" href="highlight/styles/atelier-cave.light.css">
+    <link rel="stylesheet" href="css/slides.css">
+    <link rel="stylesheet" href="css/style.css">
+  
+
+    <script src="highlight/highlight.pack.js"></script>
+    <script>window.onload = function() {
+        var aCodes = document.getElementsByTagName('pre');
+        for (var i=0; i < aCodes.length; i++) {
+            hljs.highlightBlock(aCodes[i]);
+        }
+    };
+
+    </script>
+</head>
+<body class="list">
+  <header class="caption">
+    <h1>Du Savoir Faire au Faire Savoir - WebGL</h1>
+    <p>Amandine, Cyrille, Frank, Liantsoa, Nour</p>
+  </header>
+  <section class="slide cover fullscreen"><div>
+    <h2>Du Savoir Faire au Faire Savoir - WebGL</h2>
+        </br>
+    <p>Amandine, Cyrille, Frank, Liantsoa, Nour</p>
+  </div>
+  </section>
+  <section class="slide">
+    <h4><span>Du savoir faire au faire savoir - WebGL<br></span>Sommaire</h4>
+    <div class="inside">
+    <ul>
+      <li>Introduction</li>
+        <ul>
+          <li>Présentation de WebGL</li>
+          <li>Organisation de la séance</li>
+        </ul>
+      </li>
+      <li>TP - Création d'un pong avec WebGL</li>
+        <ul>
+          <li>Partie 1 - Création d'une scène</li>
+          <li>Partie 2 - Ajout de modèles 3D</li>
+          <li>Partie 3 - Animation</li>
+          <li>Partie 4 - Texturisation</li>
+        </ul>
+      </li>
+    </ul>
+        </br>
+        </br>
+       </div>
+
+  
+  </section>
+
+  <!-- Partie cours -->
+  <!-- Slide titre -->
+  <section class="slide">
+  <img class="diamond" src="images/diamond.png">
+  <div class="bigtitle">
+
+    <h2>Introduction</h2>   
+    <h1>Partie 1 - Présentation de WebGL</h1>
+    <img src="images/webgl.jpg" style="padding-top: 0%;height: 250px;">
+  </div>
+  </section>
+   <section class="slide">
+    <h4><span>Introduction - Partie 1<br></span>Historique</h4>
+    <div class="inside">
+        <ul>
+          <li><b>Fin 1990 -</b>  VRML (Virtual Reality Modelling Language)</li>
+          <ul>
+            <li>Rendu 3D d'images</li>
+            <li>Interaction entre l'animation et l'utilisateur</li>
+            <li>Syntaxe de type XML </li>
+            <li><b>Défaut - </b> Demande exigente en bande passante</li>
+          </ul>
+          <li><b>En 2005 -</b> X3D </li>
+          <ul>
+            <li>Remplace VRML</li>
+            <li>Standard Web3D</li>
+
+          </ul>
+          <li><b>Fin 2009 -</b> WebGL </li>
+        </ul>
+    </div>
+    </section>
+    <section class="slide">
+    <img src="images/webgl-logo.png" style="float: right;padding-top: 0%;margin: 100px 100px;
+    height: 100px;">
+    <h4><span>Introduction - Partie 1<br></span>Qu'est ce que c'est ?</h4>
+
+    <div class="inside">
+       <ul>
+          <li>Fondé par Mozilla et le groupe Khronos</li>
+          <li>Permet de gérer dynamiquement des éléments 3d sur le web</li>
+          <li>Standards d'OpenGL</li>
+          <li>Utilise le GPU de l'ordinateur</li> 
+          <li>API Javascript</li>
+          <li>Utilise l'élément canvas de HTML</li>
+          <li>Supporté par les navigateurs modernes et mobiles</li>
+        </ul>
+    </div>
+    </section>
+
+    <section class="slide">
+    <h4><span>Introduction - Partie 1<br></span>Three.js</h4>
+  <div class="inside">
+
+    <ul>
+      <li> Bibliothèque javascript de création de scènes 3D   </li>
+      <li> Utilisation facile avec la balise canvas du HTML5  (sans plugin) </li>
+      <li> Accessible à tout le monde (code source hébergé sur gitHub en avril 2010)</li>
+    </ul>
+    <p style="text-align:right;margin-top:-30px;">
+      <img src="images/threejs.png" style="width:30%;">
+      </p>
+  </div>
+  </section>
+  
+   <section class="slide">
+    <h4><span>Introduction - Partie 1<br></span>Babylon.js</h4>
+  <div class="inside">
+    <ul>
+      <li> Bibliothèque JavaScript de création de jeux 3D </li>
+      <li> HTML5, webGL et Web Audio </li>
+    </ul>
+    <p style="text-align:right;">
+      <img src="images/babylon.svg" style="width:40%;">
+      </p>
+
+  </div>
+
+  </section>
+  <section class="slide">
+    <h4><span>Introduction - Partie 1<br></span>Projets et Réalisations </h4>
+<div class="inside">
+  <div style="float:left; width:400px;">
+    <ul>
+      <li>  <a href="http://helloracer.com/webgl/">Hello Racer</a> </li>
+      <ul>
+        <li>Crée par HelloEnjoy™ </li>
+        <li>Bibliothèque Three.js</li>
+      </ul>
+      <br>
+      </li>
+      <li><a href="https://eyes.nasa.gov/curiosity/"> Nasa - Experience curiosity</a> </li>
+      <ul>
+        <li>Crée par la Nasa </li>
+      </ul>
+      
+      </li>
+    </ul>
+  </div>
+</div>
+ <div style="margin-top:70px;margin-left:450px;width:400px;">
+         <img src="images/racer.jpg" style="width:60%;margin-bottom:35px;"><br>
+         <img src="images/nasa.jpg" style="width:60%;">
+
+ </div>
+  </section>
+
+ 
+  <!-- Partie présentation du TP -->
+  <!-- Slide titre -->
+  <section class="slide">
+  <img class="diamond" src="images/diamond.png">
+  <div class="bigtitle">
+    <h2>Introduction</h2>   
+    <h1>Partie 2 - Présentation du TP</h1>
+  </div>
+  </section>
+  <section class="slide">
+    <h4><span>Introduction - Partie 2<br></span>Objectifs</h4>
+    <div class="inside">
+      <ul>
+        <li>Création d'un Pong à deux joueurs</li>
+        <li>Réalisation des modèles 3D</li>
+        <li>Ajout de l'animation</li>
+        <li>Personnalisation des graphismes</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h4><span>Introduction - Partie 2<br></span>Organisation</h4>
+    <div class="inside" style="text-align:center;">
+    <br>
+    <div style="float:left;margin-right:10px;width:23%">
+      <table>
+       <tr>
+          <td>
+            <b>Partie 1</b><br>
+            Mise en place<br>
+            <span style="font-size:14px;">
+            <ul><li>Création de la scène</li>
+            <li>Renderer</li>
+            <li>Ajout de la lumière</li>
+            <li>Création d'un cube</li></ul>
+          </span>
+          </td>
+       </tr>
+      </table>
+    </div>
+    <div style="float:left;margin-right:10px;width:23%">
+      <table>
+       <tr>
+          <td>
+          <b>Partie 2</b><br>
+          Modèles 3D<br>
+            <span style="font-size:14px;">
+            <ul>
+            <li>Terrain de jeu</li>
+            <li>Raquettes des joueurs</li>
+            <li>Balle </li></ul>
+          </span>
+          </td>
+       </tr>
+      </table>
+    </div>
+    <div style="float:left;margin-right:10px;width:23%">
+      <table>
+       <tr>
+          <td>
+          <b>Partie 3</b><br>
+          Animation<br>
+            <span style="font-size:14px;">
+            <ul>
+            <li>Mouvement de la balle</li>
+            <li>Échanges entre joueurs</li>
+            <li>Évolution du score</li></ul>
+          </span>
+          </td>
+       </tr>
+      </table>
+          </div>
+
+      <div style="float:left;margin-right:10px;width:23%">
+            <table>
+       <tr>
+          <td>
+          <b>Partie 4</b><br>
+          Textures<br>
+            <span style="font-size:14px;">
+            <ul>
+            <li>Texture du terrain</li>
+            <li>Texture de la balle</li></ul>
+          </span>
+          </td>
+       </tr>
+      </table>
+          </div>
+
+    </div>
+  </section>
+  <section class="slide">
+    <h4><span>Introduction - Partie 2<br></span>Sources</h4>
+    <div class="inside">
+    <ul>
+    <li><i>three.min.js</i> - Librairie Three.js</li>
+    <li><i>keyboard.js</i> - Méthodes pour l'interaction au clavier</li>  
+    <li><i>index.html</i> - Page html pour afficher le jeu</li>
+    <li><i>game.js</i> - Fonctions à compléter</li>
+    </ul>
+    <b>Où les trouver ?</b>  <i>Téléchargez-les via <a href="./sources.zip">ce lien</a></i><br>
+
+    </div>
+  </section>
+  <section class="slide">
+    <h4><span>Introduction - Partie 2<br></span>Pré-requis</h4>
+
+    <div class="inside">
+      <ul>
+        <li>Un éditeur de texte et un navigateur</li>
+        <li>Lancer un serveur web local</li>
+          <ul>
+            <li><b>Version python 3 et supérieure</b>
+        <pre><code class="bash">   ?> python -m http.server</code></pre></li>
+      <li><b>Autres versions</b>
+              <pre><code class="bash">   ?> python -m SimpleHTTPServer</code></pre></li>
+      <li>Si python n'est pas installé, téléchargez <a href = "https://www.python.org/ftp/python/3.5.1/python-3.5.1-embed-amd64.zip" >le zip</a>, décompressez-le puis mettez les sources à l'intérieur. Enfin lancer la commande python</li>
+          </ul>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Debut Partie 1 -->
+    <section class="slide">
+          <img class="diamond" src="images/diamond.png">
+          <div class="bigtitle">
+            <h2>TP - Création d'un Pong avec Web GL</h2>
+
+            <h1>Partie 1 - Mise en place de la scène</h1>
+
+          </div>
+    </section>
+
+
+     <section class="slide">
+        <h4><span>TP Partie 1 - Cours<br></span>Eléments d'une scène</h4>
+        <div class="inside">
+          <ul>
+            <li> Un moteur de rendu (Renderer)</li>
+            <li> Une scène </li>
+            <li> Une caméra </li>
+            <li> De la lumière </li>
+          </ul>
+        </div>
+    </section> 
+
+    <section class="slide">
+        <h4><span>TP Partie 1 - Cours<br></span>Le moteur de rendu (Renderer)</h4>
+        <div class="inside">
+          <ul>
+            <li> Affiche les scènes créées </li>
+            <li> Doit être intégré dans une balise div de notre fichier Html </li>
+            <li> Attribut <b>setSize()</b> pour spécifier la taille de la fenêtre de rendu </li>
+            <li> Plusieurs type de Renderer avec <i>Three.js</i></li>
+            <ul>
+              <li><b>THREE.WebGLRenderer()</b></li>
+              <li><b>THREE.CanvasRenderer()</b></li>
+            </ul>
+          </ul>
+        </div>
+    </section> 
+
+
+
+    <section class="slide">
+        <h4><span>TP Partie 1 - Cours<br></span>La scène</h4>
+        <img src="images/scene.png" style="float: right;margin: 10px 20px;padding-top: 10%;">
+
+        <div class="inside">
+          <ul>
+            <li> Contient l'ensemble des éléments 3D </li>
+            <li> Est affichée par le biais de notre renderer</li>
+            <li> <b>THREE.Scene()</b></li>
+          </ul>
+        </div>
+    </section> 
+
+
+  <section class="slide">
+      <h4><span>TP Partie 1 - Cours<br></span>Ajouter un renderer et la scène</h4>
+      <div class="inside">
+          <pre><code>var renderer, scene;
+function init(){
+  //On recupère la div du HTML
+  var c = document.getElementById("gameCanvas");
+
+  //On initialise le moteur de rendu
+  renderer = new THREE.WebGLRenderer();
+
+  //Taille de la scene
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  //On ajoute au HTML
+  c.appendChild(renderer.domElement);
+
+  //On initialise la scène
+  scene = new THREE.Scene();
+}</code></pre>
+      </div>
+  </section>
+
+    <section class="slide">
+        <h4><span>TP Partie 1 - Cours<br></span>La caméra</h4>
+        <img src="images/camera.png" style="float: right;margin: 10px 20px;padding-top: 18%;">
+        <div class="inside">
+          <ul>
+            <li> Permet de visualiser les éléments de la scène d'un certain point de vue </li>
+            <li> Constructeur <b>THREE.PerspectiveCamera</b> </li>
+            <ul>
+              <li> <i>Fov (Field Of View)</i> - correspond à l'angle de vision </li>
+              <li> <i>Aspect</i> - ratio largeur/hauteur</li>
+              <li> <i>Near</i> - distance minimale visible par la caméra</li>
+              <li> <i>Far</i> - distance maximale visible par la caméra</li>
+            </ul>
+          </ul>
+        </div>
+    </section> 
+
+  <section class="slide">
+      <h4><span>TP Partie 1 - Cours<br></span>Greffer une caméra</h4>
+      <div class="inside">
+        <pre><code>function init(){
+    var WIDTH = window.innerWidth, HEIGHT = window.innerHeight;
+
+    //Attributs de la camera
+    var VIEW_ANGLE = 90,
+    ASPECT = WIDTH / HEIGHT;
+    
+    camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
+
+    //On ajoute la caméra à la scène    
+    scene.add(camera);
+}
+
+function draw(){
+  renderer.render(scene, camera);
+}</code></pre>
+
+
+      </div>
+  </section>
+
+    <section class="slide">
+        <h4><span>TP Partie 1 - Cours<br></span>La lumière</h4>
+        <div class="inside">
+          <ul> 
+            <li> <b>Attributs principaux</b> </li>
+            <ul>
+              <li> <i>Hex</i> - Couleur hexadécimale de la lumière </li>
+              <li> <i>Intensity</i> - puissance de la lumière </li>
+              <li> <i>distance</i> - distance de la lumière par rapport au centre de celle-ci</li>
+            </ul>
+            <li> <b>Types</b> </li>
+            <ul>
+              <li> <i>THREE.PointLight</i> - Point lumineux multidirectionel </li>
+              <li> <i>THREE.SpotLight</i> - Spot lumineux </li>
+              <li> <i>THREE.DirectionalLight</i> - Lumière directionelle</li>
+              <li> <i>THREE.AmbientLight</i> - Lumière identique sur tous les objets</li>
+            </ul>
+          </ul>
+        </div>
+    </section>
+  <section class="slide">
+      <h4><span>TP Partie 1 - Cours<br></span>Mise en place de la lumière</h4>
+      <div class="inside">
+      <ul> 
+            <li>PointLight
+<pre><code>     //Créer un pointLight
+var pLight = new THREE.PointLight(0xFFFFFF);
+pLight.position.set(0,100,0);
+pLight.intensity = 2;
+scene.add(pointLight);</code></pre></li>
+
+<li>SpotLight
+<pre><code>     //Créer une spotLight
+spotLight = new THREE.SpotLight(0xFF0000);
+spotLight.position.set(0, 0, 200);
+spotLight.intensity = 1.5;
+spotLight.castShadow = true;
+scene.add(spotLight);</code></pre>
+</li></ul>
+      </div>
+  </section>
+  <section class="slide">
+
+    <h4><span>TP Partie 1 - Cours<br></span>Création d'un carré </h4>
+      <div class="inside">
+       <pre><code>var cube = new THREE.Mesh(
+  new THREE.CubeGeometry(200, 200, 200),
+  new THREE.MeshNormalMaterial());      
+scene.add(cube);</code></pre>
+      </div>
+        <div  class="threejs-container tiny-center" type="cube">Loading...</div>
+
+  </section>
+    <section class="slide">
+      <h4><span>TP Partie 1 - Exercices<br></span>À vous de jouer !</h4> 
+      <div class="inside"><br>
+      Dans la fonction <i>miseEnPlace()</i>
+      <ol type="1">
+          <li>Création du Renderer</li>
+          <li>Création d'une scène</li>
+          <li>Création d'une caméra</li>
+          <li>Création d'un cube</li>
+          <li>Ajout de la caméra et du cube dans la scène</li>
+        </ol>
+      </div>
+      <div  class="threejs-container tiny-top " type="cube">Loading...</div>
+
+  </section>
+  <!-- TP Partie 2-->
+  <!-- Slide titre -->
+  <section class="slide">
+  <img class="diamond" src="images/diamond.png">
+  <div class="bigtitle">
+    <h2>TP - Création d'un Pong avec Web GL</h2>   
+    <h1>Partie 2 - Conception des modèles 3D</h1>
+  </div>
+  </section>
+    <section class="slide">
+      <h4><span>TP Partie 2 - Cours<br></span>Les matériaux</h4>
+      <div class="inside"> 
+    Matériaux courants à appliquer à vos mailles
+      <ul>
+        <li>Normal  - <b>THREE.MeshNormalMaterial</b></li>
+        <li>Basic (maillage éteint)  - <b>THREE.MeshBasicMaterial</b></li>
+        <li>Lambert (un simple éclairage) -  <b>THREE.MeshLambertMaterial</b></li>
+        <li>Phong (rendu semblable à du plastique) - <b>THREE.MeshPhongMaterial</b></li>
+      </ul>
+<pre style="margin-bottom:5px;">
+  <code>    var material = new THREE.MeshBasicMaterial({color: 0xDE5285});</code>
+</pre>
+    </div>
+  </section>
+    <section class="slide">
+      <h4><span>TP Partie 2 - Cours<br></span>Les formes géométriques (1/3)</h4>
+      <div class="inside">      
+      <span><ul>
+      <li>Cercle - <b>THREE.CircleGeometry</b>
+<pre style="margin-bottom:20px;">
+<code>      var circle = new THREE.CircleGeometry(radius, segments);
+</code></pre>
+      </li>
+      <li>Sphère - <b>THREE.SphereGeometry</b>
+<pre style="margin-bottom:20px;">
+<code>      var sphere = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
+</code></pre>
+      </li>
+    </ul></span>
+    </div>
+    <div type="forme1" class="threejs-container tiny-center">Loading...</div>
+  </section>
+      <section class="slide">
+      <h4><span>TP Partie 2 - Cours<br></span>Les formes géométriques (2/3)</h4>
+      <div class="inside">      
+      <span><ul>
+      <li>Cylindre - <b>THREE.CylinderGeometry</b>
+<pre style="margin-bottom:20px;">
+<code>      var cylinder = new THREE.CylinderGeometry
+                          (radiusTop, radiusBottom, height, radiusSegments);
+</code></pre>
+      </li>
+       <li>Cube - <b>THREE.BoxGeometry</b>
+       <pre style="margin-bottom:20px;">
+<code>      var cube = new THREE.BoxGeometry(width, height, depth);
+</code></pre>
+</li>
+    </ul></span>
+    </div>
+    <div type="forme2" class="threejs-container tiny-center">Loading...</div>
+  </section>
+        <section class="slide">
+      <h4><span>TP Partie 2 - Cours<br></span>Les formes géométriques (3/3)</h4>
+      <div class="inside">      
+      <span><ul>
+      <li>Plane - <b>THREE.PlaneGeometry</b>
+      <pre style="margin-bottom:20px;">
+<code>      var plane = new THREE.PlaneGeometry(width, height, widthSegments);
+</code></pre></li>
+      <li>Anneau - <b>THREE.RingGeometry</b>
+      <pre style="margin-bottom:20px;">
+<code>      var ring = new THREE.RingGeometry(innerRadius, outerRadius, thetaSegments);
+</code></pre></li>
+    </ul></span>
+    </div>
+    <div type="forme3" class="threejs-container tiny-center">Loading...</div>
+  </section>
+
+      
+      <section class="slide">
+      <h4><span>TP Partie 2 - Cours<br></span>Assembler un maillage</h4>
+      <div class="inside">  
+          <ol style="padding:0px;">
+      <li>Création d'un matériel
+<pre style="margin-bottom:20px;">
+<code>      var material = new THREE.MeshNormalMaterial();
+</code></pre>
+      </li>
+      <li>Création d'une forme géométrique
+<pre style="margin-bottom:20px;">
+<code>      var geometry = new THREE.SphereGeometry(10, 10, 10);
+</code></pre>
+</li>
+      <li>Assemblage du maillage
+<pre style="margin-bottom:20px;">
+<code>      var mesh = new THREE.Mesh(geometry, material);
+</code></pre>
+</li>
+      <li>Ajout à la scène
+<br>
+<pre style="margin-bottom:20px;">
+<code>      scene.add(mesh);
+</code></pre>
+      </li>
+    </ol>   
+     
+    </div>
+  </section>
+      <section class="slide">
+      <h4><span>TP Partie 2 - Cours<br></span>Proprietés des objets</h4>
+      <div class="inside"> 
+    <ul>
+    <li>Positionnement (x, y, z)
+<pre style="margin-bottom:5px;">
+  <code>
+  object.position.x = 0;
+  </code>
+</pre>
+    </li>
+
+    <li>Rotation (x, y, z)
+<pre style="margin-bottom:5px;">
+  <code>
+  object.rotation.x = 0;
+  </code>
+</pre>
+</li>
+    <li>Scale (x, y, z)
+    <pre style="margin-bottom:5px;">
+  <code>
+  object.scale.x = 0;
+  </code>
+</pre></li>
+    </ul>
+    </div>
+  </section> 
+  <section class="slide">
+      <h4><span>TP Partie 2 - Cours<br></span>Exemple (1/2) - Sphère </h4>
+      <div class="inside"><br><pre><code>//Initialisation des variables de la sphère
+var radius = 50, segments = 16, rings = 16;
+
+//Création du matériel de la sphère
+var sphereMaterial = 
+  new THREE.MeshLambertMaterial({color: 0xCC0000});
+
+//Création de la géométrie de la sphère
+var geometry = new THREE.SphereGeometry(radius, segments, rings);
+
+//Création d'un maillage
+var sphere = new THREE.Mesh(geometry, sphereMaterial);
+
+//On ajoute la sphère à la scène
+scene.add(sphere);</code></pre></div>
+    <div type="sphere" class="threejs-container tiny-top">Loading...</div>
+  </section>
+  <section class="slide">
+      <h4><span>TP Partie 2 - Cours<br></span>Exemple (2/2) - Cubes</h4>
+      <div class="inside"><br><pre><code>var cubeMaterial = 
+  new THREE.MeshLambertMaterial();
+
+var cube1 = new THREE.Mesh(
+  new THREE.CubeGeometry(100, 50, 10, 5, 5, 5), cubeMaterial);
+
+var cube2 = new THREE.Mesh(
+  new THREE.CubeGeometry(100, 50, 10, 5, 5, 5), cubeMaterial);
+
+cube1.position.x = 100;
+cube2.position.x = -100;
+
+scene.add(cube1);
+scene.add(cube2);</code></pre></div>
+    <div type="paddle" class="threejs-container tiny-top">Loading...</div>
+  </section>
+   
+  <section class="slide">
+      <h4><span>TP Partie 2 - Exercices<br></span>À vous de jouer !</h4>
+      <div class="inside"><br><br>
+        <ol type="1">
+          <li>Création de surface de jeu <i>createPlane()</i></li>
+          <li>Création de la table de jeu <i>createTable()</i></li>
+          <li>Création des deux raquettes <i>createPaddles()</i></li>
+          <li>Création de la balle <i>createBall()</i></li>
+          <li>Positionnement des objets</li>
+        </ol>
+      </div> 
+      <div type="tp_part2" class="threejs-container tiny-top">Loading...</div>
+  </section>
+
+    <!-- TP Partie 3-->
+  <!-- Slide titre -->
+  <section class="slide">
+  <img class="diamond" src="images/diamond.png">
+  <div class="bigtitle">
+    <h2>TP - Création d'un Pong avec Web GL</h2>   
+    <h1>Partie 3 - Animation et logique du jeu</h1>
+  </div>
+  </section>
+  <section class="slide">
+      <h4><span>TP Partie 3 - Cours<br></span>Animer des modèles 3D</h4>
+      <div class="inside">
+        <p style="margin:0px">Tout objet peut être animé</p>
+        <ul>
+          <li>
+            <b>Formes géométriques</b>
+            <span style="font-size:20px;">(Plier, tordre, transformer)</span>  
+          </li>
+          <li>
+            <b>Textures</b>
+            <span style="font-size:20px;">(Déplacer, redimensionner, tourner, faire défiler)</span>
+          </li>
+          <li>
+            <b>Matériaux</b>
+            <span style="font-size:20px;">(Changement des couleurs, ajout de reflets, modification de la transparence)</span>
+          </li>
+          <li>
+            <b>Lumières</b>
+            <span style="font-size:20px;">(Changement de couleur, mouvements ou clignotements)</span> 
+          </li>
+          <li>
+            <b>Caméras</b>
+            <span style="font-size:20px;">(Tourner, déplacer)</span>
+          </li>
+        </ul>
+      </div>
+  </section>
+    <section class="slide">
+      <h4><span>TP Partie 3 - Cours<br></span>Idée générale</h4>
+      <div class="inside">       
+      <ul>
+        <li>Génération des objets</li>
+        <li>Création d'une fonction qui gère l'animation d'un ou plusieurs objets</li>
+        <li>Appel en continu de la fonction d'animation</li>
+        <li><b>requestAnimationFrame()</b></li>
+      </ul>
+      </div>
+  </section>
+    
+<section class="slide">
+      <h4><span>TP Partie 3 - Cours<br></span>Exemple (1/2) - Sphère rebondissante</h4>
+      <div class="inside">        
+<pre><code>init();
+draw();
+
+function init(){ 
+  var sphere = 
+  new THREE.Mesh(new THREE.SphereGeometry(50, 60, 60), 
+          new THREE.MeshLambertMaterial({map: '../images/tennisBall.jpg'});)
+  scene.add(sphere);
+}
+
+function draw(){
+  renderer.render(scene, camera);
+  requestAnimationFrame(draw);
+  moveObject();
+}</code></pre>
+      </div>
+      <div type="bounding" class="threejs-container tiny-bottom">Loading...</div>
+  </section>
+      <section class="slide">
+      <h4><span>TP Partie 3 - Cours<br></span>Exemple (2/2) - Sphère rebondissante</h4>
+      <div class="inside">        
+<pre><code>function moveObject(){
+    sphere.rotation.x += 0.005;
+    sphere.rotation.y += 0.01;
+
+    if(go_up){
+        sphere.position.y +=1;
+    } else {
+      sphere.position.y -=2;
+    }
+    if(object.position.y == 90){
+        go_up = false;
+    }
+    if(object.position.y == -90){
+        go_up = true;
+    }
+}</code></pre>
+      </div>
+      <div type="bounding" class="threejs-container tiny-bottom">Loading...</div>
+  </section>
+
+  <section class="slide">
+      <h4><span>TP Partie 3 - Cours<br></span>Dans le TP</h4>
+      <div class="inside">
+        <ul>
+          <li>Animation de la caméra <i>(cameraPhysics)</i></li>
+          <li>Trajet de la balle</li>
+              <ul>
+                  <li>Gestion des collisions <i>(ballPhysics)</i></li>
+                  <li>Recentrer la balle après un point<i> (resetBall)</i></li>
+               </ul>
+          <li>Mouvement des paddles</li>
+              <ul>
+                  <li>Gestion des collisions <i>(paddlePhysics)</i></li>
+                  <li>Mouvements suivant l'axe de la table  <i>(ballPhysics, resetBall)</i></li>
+              </ul>
+          <li>Score du jeu <i>(matchScoreCheck)</i></li>  
+        </ul>
+
+      </div>
+  </section>
+   <section class="slide">
+      <h4><span>TP Partie 3 - Exercices<br></span>À vous de jouer !</h4>
+      <div class="inside"><br><br>
+      Implémenter les fonctions
+      <ol type="1">
+        <li><i>ballPhysics()</i> - Gestion de l'animation de la balle.</li>
+        <li><i>resetBall()</i> - Gestion de la réinitialisation de l'état de la balle</li>
+        <li><i>paddle1Movement()</i> - Gestion des mouvements du paddle du joueur 1</li>
+        <li><i>paddle2Movement()</i> - Gestion des mouvements du paddle du joueur 2</li>
+      </ol>
+
+      </div> 
+      <div type="tp_part3" class="threejs-container tiny-top">Loading...</div>
+  </section> 
+
+      <!-- TP Partie 3-->
+  <!-- Slide titre -->
+  <section class="slide">
+  <img class="diamond" src="images/diamond.png">
+  <div class="bigtitle">
+    <h2>TP - Création d'un Pong avec Web GL</h2>   
+    <h1>Partie 4 - Ajout des textures</h1>
+  </div>
+  </section>
+  <section class="slide">
+      <h4><span>TP Partie 4 - Cours<br></span>Généralités sur les textures</h4>
+      <div class="inside">
+            <ul>
+                <li>Pixels de texture - Texels</li>
+                <li>Plusieurs formats de texture</li>
+                  <ul><li>RGB</li><li>RGBA</li><li>RGBEF</li><li>Alpha</li><li>LuminanceAlpha</li></ul>
+                </li>
+                <li>Carte 3D - Caches de texture ultrarapides</li>
+            </ul>
+      </div>
+      <div type="part4" class="threejs-container tiny-bottom">Loading...</div>
+  </section>
+    <section class="slide">
+        <h4><span>TP Partie 4 - Cours<br></span>Types de texture (1/2)</h4>
+        <div class="inside">
+                <ul>
+                    <li>Texture</li>
+                        <pre> <code>var texture = THREE.ImageUtils.loadTexture("textures/image.jpg"); </code></pre>
+
+                    <li>CubeTexture</li>
+                        <pre><code>var format = '.png';
+var urls = [
+    path + 'px' + format, path + 'nx' + format,
+    path + 'py' + format, path + 'ny' + format,
+    path + 'pz' + format, path + 'nz' + format
+    ];
+var textureCube = THREE.ImageUtils.loadTextureCube(urls);</code></pre>
+
+                </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <h4><span>TP Partie 4 - Cours<br></span>Types de texture (2/2)</h4>
+        <div class="inside">
+                <ul>
+                    <li>CompressedTexture - DDS format </li>
+                        <pre><code>var loader = new THREE.DDSLoader();
+var map = loader.load('textures/compressed/disturb_dxt1_nomip.dds');</code></pre>
+                    <li>DataTexture - texture en données brutes</li>
+                    <pre>
+                        <code>var size = textureWidth * textureHeight;
+var dataColor = new Uint8Array( size * 3 );
+for (var i = 0; i < size; i ++) {
+  dataColor[ i * 3 ]     = 0;
+  dataColor[ i * 3 + 1 ] = 0;
+  dataColor[ i * 3 + 2 ] = 255;}
+var map = new THREE.DataTexture(dataColor, textureWidth, 
+                                            textureHeight, THREE.RGBFormat);</code>
+                    </pre>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <h4><span>TP Partie 4 - Cours<br></span>Ajouter une texture (1/2)</h4>
+        <div class="inside">
+            <ul>
+                <li>Exemples de mapping  </li>
+                <ul>
+                    <li>UV Mapping </li>
+                    <img style="margin-right:60px;" src="images/UVMapping.jpg" align="center">
+                    <img src="images/UV-projection-mollweide.jpg" align="center" >
+
+                    <li>CubeReflectionMapping </li>
+                    <li>SphereReflectionMapping </li>
+
+
+                </ul>
+
+            </ul>
+        </div>
+        <div type="part4ExMapping" class="threejs-container tiny-top">Loading...</div>
+    </section>
+  <section class="slide">
+      <h4><span>TP Partie 4 - Cours<br></span>Ajouter une texture (2/2)</h4>
+      <div class="inside">
+<pre><code>//Texturer la balle
+var texture = THREE.ImageUtils.loadTexture('texture.jpg');
+
+var sphereMaterial =
+  new THREE.MeshLambertMaterial(
+  {
+      map: texture
+  });
+
+//Création de la balle
+ball = new THREE.Mesh(new THREE.SphereGeometry(radius,segments,rings),
+                      sphereMaterial);</code></pre>
+      </div> 
+  </section>
+    <section class="slide">
+        <h4><span>TP Partie 4 - Exercices<br></span>À vous de jouer !</h4>
+        <div class="inside"><br><br>
+            <ol type="1">
+                <li>Texturer la balle</li>
+                <li>Texturer le terrain</li>
+            </ol>
+        </div>
+        <div type="tp_part4" class="threejs-container tiny-top">Loading...</div>
+    </section>
+
+
+
+  <section class="slide cover fullscreen" id="Thanks"><div>
+    <h2>Merci</h2>
+        </br>
+    <p>Amandine, Cyrille, Frank, Liantsoa, Nour</p>
+  </div>
+
+  </section>
+  <div class="progress"></div>
+  <script src="shower/shower.min.js"></script>
+    <script src="js/config.js"></script>
+    <script data-main="../presentation" src="js/require.js"></script>
+    <!-- pretify code -->
+
+
+</body>
+</html>
